@@ -1,10 +1,9 @@
 require('dotenv').config()
-
 const express = require('express');
 const app = express();
 const port = 4000;
+
 const githubData = {
-  
   "login": "sumit2027",
   "id": 121666746,
   "node_id": "U_kgDOB0B8ug",
@@ -37,28 +36,25 @@ const githubData = {
   "followers": 0,
   "following": 1,
   "created_at": "2022-12-30T09:30:02Z",
-  "updated_at": "2026-03-13T13:51:25Z"
-};
-
+  "updated_at": "2026-05-10T16:15:39Z"
+}
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-
-app.get('/twitter',(req, res)=>{
-    res.send('SumitKashyap2027');
-})
+app.get('/sumit', (req, res) => {
+  res.send('Hello hacker!');
+});
 
 app.get('/login', (req, res) => {
-  res.send('<h1>plase login at chai or code</h1>')
+  res.send('<h1>Plase login at coconutcode</h1>')
 })
-
 app.get('/youtube', (req, res) => {
-  res.send("<h2>Sumit Vlog bly</h2>")
+  res.send('<h2>Coconut code</h2>')
+})
+app.get('/github', (req, res) => {
+  res.json(githubData)
 })
 
-app.get('/github',(req,res)=> {
-  get.json(githubData);
-})
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
